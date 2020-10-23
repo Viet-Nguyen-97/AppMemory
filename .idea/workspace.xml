@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9a91de2f-2804-412e-855f-ec8d98141ce9" name="Default Changelist" comment="update code">
+      <change afterPath="$PROJECT_DIR$/lib/ui/pincode/change_pin.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/pincode/change_pin_new.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/pincode/change_pin_re.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/profile_user.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/ui/view_image.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/diary.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sketchbook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/translate.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/translate.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/undo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/router.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/diary/create_diary.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/diary/create_diary.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/diary/pick_image.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/drawer/app_drawer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/drawer/app_drawer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/man_cho/man_cho.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/man_cho/sc_begin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/splash/sc_begin.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/man_cho/sc_three_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/splash/sc_three_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/man_cho/sc_two_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/splash/sc_two_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/menu/ban_do.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/menu/map.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/menu/kho_anh.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/menu/image_library.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/menu/lich.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/menu/calendar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/menu/nhat_ki.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/menu/diary.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/menu/tai_khoan.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/menu/account.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/pincode/re_pin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/pincode/re_pin.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/app/src/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/app/src/main/kotlin/com/example/memorylife/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/app/src/profile/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/local.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/memorylife_android.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/android/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Flutter/Debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Flutter/Generated.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Flutter/Release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Flutter/flutter_export_environment.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/AppDelegate.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Base.lproj/LaunchScreen.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Base.lproj/Main.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/GeneratedPluginRegistrant.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/ios/Runner/Runner-Bridging-Header.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memorylife/lib/main.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="ProjectId" id="1hqqZ3AWik7D2M63MkQu5GJxoq8" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../todo_flutter-Simple-Todo-App" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\memorylife\lib" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\memorylife\lib\my_app" />
+      <recent name="C:\xampp\htdocs\memorylife\lib" />
+      <recent name="C:\xampp\htdocs\memorylife\lib\ui\man_cho" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9a91de2f-2804-412e-855f-ec8d98141ce9" name="Default Changelist" comment="" />
+      <created>1600749021445</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600749021445</updated>
+    </task>
+    <task id="LOCAL-00001" summary="update code">
+      <created>1600754462699</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600754462700</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update code">
+      <created>1600754475859</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600754475859</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update code" />
+    <option name="LAST_COMMIT_MESSAGE" value="update code" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="280" y="26" key="#Notifications" timestamp="1602511390383">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="280" y="26" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1602511390383" />
+    <state x="350" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601390540669">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="350" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1601390540669" />
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1600869873934">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1600869873934" />
+    <state x="430" y="110" key="FileChooserDialogImpl" timestamp="1602146158446">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="430" y="110" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602146158446" />
+    <state width="1058" height="174" key="GridCell.Tab.0.bottom" timestamp="1602089004048">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1058" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1602089004048" />
+    <state width="1058" height="174" key="GridCell.Tab.0.center" timestamp="1602089004048">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1058" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1602089004048" />
+    <state width="1058" height="174" key="GridCell.Tab.0.left" timestamp="1602089004048">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1058" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1602089004048" />
+    <state width="1058" height="174" key="GridCell.Tab.0.right" timestamp="1602089004048">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1058" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1602089004048" />
+    <state x="362" y="67" width="691" height="602" key="NewModule_or_Project.wizard" timestamp="1602146175386">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="362" y="67" width="691" height="602" key="NewModule_or_Project.wizard/0.0.1366.728@0.0.1366.728" timestamp="1602146175386" />
+    <state x="189" y="10" key="SettingsEditor" timestamp="1602511429036">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="189" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1602511429036" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1600754485068">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1600754485068" />
+    <state x="459" y="286" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601130829586">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="459" y="286" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1601130829586" />
+  </component>
+</project>
