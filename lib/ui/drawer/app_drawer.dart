@@ -1,10 +1,31 @@
+import 'dart:convert';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:memorylife/models/User.dart';
 import 'package:memorylife/router.dart';
+import 'package:memorylife/models/services/user.sevice.dart';
 
 class AppDrawer extends StatelessWidget {
+
+  String avatar_image = "assets/loading.png";
+  String nickname = "Loading";
+
+  User currentUser;
+  getInfoUser(){
+    userAPIServices.fetchUsers().then((response){
+      Iterable list = json.decode(response.body);
+      List<User> userList = List<User>();
+      userList = list.map((model) => User.fromObject(model)).toList();
+      currentUser = userList[0];
+      avatar_image = currentUser.avatar_image;
+      nickname = currentUser.nickname;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    getInfoUser();
     return Drawer(
       child: Container(
         color: Colors.white,
@@ -16,13 +37,17 @@ class AppDrawer extends StatelessWidget {
             Divider(color: Colors.white,thickness: 1.0,),//0569 486 879
             _createDrawerItem(icon: AssetImage("assets/note.png"), text: 'Đăng bài',
                 onTap: () => Navigator.pushNamed(context, BaseRouter.CREATE_DIARY)),
-            _createDrawerItem(icon: AssetImage("assets/notepad.png"), text: 'Tạo ghi chú',),
+            _createDrawerItem(icon: AssetImage("assets/notepad.png"), text: 'Tạo ghi chú',
+                onTap: () => Navigator.pushNamed(context, BaseRouter.CREATE_NOTE)),
             _createDrawerItem(icon: AssetImage("assets/calendar.png"), text: 'Lịch',
                 onTap: () => Navigator.pushNamed(context, BaseRouter.CALENDAR)),
-            _createDrawerItem(icon: AssetImage("assets/card_image.png"), text: 'Kho ảnh cá nhân',),
-            _createDrawerItem(icon: AssetImage("assets/map.png"), text: 'Bản đồ',),
+            _createDrawerItem(icon: AssetImage("assets/card_image.png"), text: 'Kho ảnh cá nhân',
+                onTap: () => Navigator.pushNamed(context, BaseRouter.IMAGE_LIBRARY)),
+            _createDrawerItem(icon: AssetImage("assets/map.png"), text: 'Bản đồ',
+                onTap: () => Navigator.pushNamed(context, BaseRouter.MAP)),
 
-            _createDrawerItem(icon: AssetImage("assets/user.png"), text: 'Hồ sơ cá nhân',),
+            _createDrawerItem(icon: AssetImage("assets/user.png"), text: 'Hồ sơ cá nhân',
+                onTap: () => Navigator.pushNamed(context, BaseRouter.PROFILE_USER)),
             _createDrawerItem(icon: AssetImage("assets/change_pin.png"), text: 'Thay đổi mã PIN',
                 onTap: () => Navigator.pushNamed(context, BaseRouter.CHANGE_PIN)),
             _createDrawerItem(icon: AssetImage("assets/theme.png"), text: 'Thay đổi chủ đề',),
@@ -68,7 +93,7 @@ class AppDrawer extends StatelessWidget {
               height: 44,
               width: 44,
               child: CircleAvatar(
-                child: Image.asset("assets/avatar.png"),
+                child: Image.asset(avatar_image),
               ),
             )
           ),
@@ -76,7 +101,7 @@ class AppDrawer extends StatelessWidget {
           Positioned(
             top: 90.0,
             left: 75.0,
-            child: Text('Nguyễn Linh An',
+            child: Text(nickname,
               style: TextStyle(
                   fontSize: 18,
                   color: Colors.white

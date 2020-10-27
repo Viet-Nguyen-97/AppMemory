@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:memorylife/ui/diary/create_diary.dart';
+import 'package:memorylife/ui/login/login.dart';
 import 'package:memorylife/ui/menu/calendar.dart';
+import 'package:memorylife/ui/menu/image_library.dart';
+import 'package:memorylife/ui/menu/map.dart';
 import 'package:memorylife/ui/pincode/change_pin.dart';
 import 'package:memorylife/ui/profile_user.dart';
 import 'package:memorylife/ui/splash/sc_begin.dart';
@@ -10,7 +13,6 @@ import 'package:memorylife/ui/splash/sc_two_screen.dart';
 import 'package:memorylife/ui/note/create_note.dart';
 
 import 'ui/home_page.dart';
-import 'ui/login.dart';
 import 'ui/pincode/new_pin.dart';
 import 'ui/splash.dart';
 
@@ -27,6 +29,8 @@ class BaseRouter {
   static const String CHANGE_PIN = '/change_pin';
   static const String CALENDAR = '/calendar';
   static const String PROFILE_USER = '/profile_user';
+  static const String IMAGE_LIBRARY = '/library_image';
+  static const String MAP = '/map';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -64,6 +68,8 @@ class BaseRouter {
       CHANGE_PIN: (context) => ChangePin(),
       CALENDAR: (context) => Calendar(),
       PROFILE_USER: (context) => ProfileUser(),
+      IMAGE_LIBRARY: (context) => ImageLibrary(),
+      MAP: (context) => MapImage(),
     };
   }
 }

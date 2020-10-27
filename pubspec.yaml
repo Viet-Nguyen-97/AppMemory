@@ -30,10 +30,12 @@ dependencies:
 
   inview_notifier_list: ^1.0.0
   photo_view: ^0.10.2
-  table_calendar: ^2.2.3
+  table_calendar: ^2.3.0
   flutter_picker: ^1.1.5
   http: ^0.12.2
   geolocator: ^6.1.0
+  date_format: ^1.0.9
+
   #  core_library
   get_it: ^4.0.2
   get: ^2.1.1

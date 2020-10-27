@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     Future.delayed(Duration(seconds: 3), () {
       CircularProgressIndicator();
-      AppNavigator.navigateBegin();
+      AppNavigator.navigateLogin();
     });
   }
 }

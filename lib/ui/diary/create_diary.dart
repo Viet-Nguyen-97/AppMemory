@@ -76,6 +76,43 @@ class _CreateNewDiaryState extends State<CreateNewDiary> {
         children: <Widget>[
           Positioned(
             top: 0,
+            left: 20,
+            child: Container(
+              height: 150,
+              width: 120,
+              decoration: BoxDecoration(
+                border: Border.all(),
+                borderRadius: BorderRadius.all(Radius.circular(5.0))
+              ),
+              //padding: EdgeInsets.only(left: 20, right: 20),
+              child: Image.asset("assets/cover_image.png", fit: BoxFit.fill,),
+            ),
+          ),
+
+          Positioned(
+            top: 150,
+            left: 0,
+            right: 0,
+            child: Container(
+              padding: EdgeInsets.only(left: 20, right: 20),
+              child: TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  // hintText: 'Tiêu đề',
+                  labelText: "Tiêu đề",
+                  alignLabelWithHint: true,
+                ),
+                style: TextStyle(
+                    fontSize: 18.0,
+                    color: Colors.black
+                ),
+                keyboardType: TextInputType.multiline,
+              ),
+            ),
+          ),
+
+          Positioned(
+            top: 200,
             left: 0,
             right: 0,
             child: Container(
@@ -91,7 +128,7 @@ class _CreateNewDiaryState extends State<CreateNewDiary> {
                     color: Colors.black
                 ),
                 keyboardType: TextInputType.multiline,
-                maxLines: 12,
+                maxLines: 8,
               ),
             ),
           ),

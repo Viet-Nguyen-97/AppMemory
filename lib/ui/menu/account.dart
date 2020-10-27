@@ -16,10 +16,10 @@ class Account extends StatefulWidget {
 
 class AccountState extends State<Account> {
 
-  String cover_image = "image.png";
-  String avatar_image = "image.png";
-  String nickname = "Error";
-  String intro = "Error";
+  String cover_image = "assets/loading.png";
+  String avatar_image = "assets/loading.png";
+  String nickname = "Loading";
+  String intro = "Loading";
 
   User currentUser;
   getInfoUser(){
@@ -27,11 +27,11 @@ class AccountState extends State<Account> {
       Iterable list = json.decode(response.body);
       List<User> userList = List<User>();
       userList = list.map((model) => User.fromObject(model)).toList();
+      currentUser = userList[0];
 
       setState(() {
-        currentUser = userList[0];
         cover_image = currentUser.background_image;
-        avatar_image = currentUser.avatar;
+        avatar_image = currentUser.avatar_image;
         nickname = currentUser.nickname;
         intro = currentUser.intro;
       });

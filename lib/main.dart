@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:memorylife/ui/home_page.dart';
+import 'package:memorylife/ui/login/login.dart';
 import 'package:memorylife/ui/splash.dart';
 import 'package:memorylife/ui/test.dart';
 
@@ -38,7 +39,7 @@ class App extends StatelessWidget {
       ),
       onGenerateRoute: Router.BaseRouter.generateRoute,
       routes: Router.BaseRouter.routes(context),
-      home: SplashScreen(),
+      home: Login(),
     );
   }
 

@@ -1,9 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:memorylife/models/User.dart';
 import 'package:memorylife/navigator/navigator.dart';
 import 'package:memorylife/ui/pincode/change_pin_new.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 import 'dart:async';
+import 'package:memorylife/models/services/user.sevice.dart';
 
 class ChangePin extends StatefulWidget {
   ChangePin({Key key}) : super(key: key);
@@ -21,6 +25,27 @@ class _ChangePinState extends State<ChangePin>{
       border: Border.all(color: Colors.blue),
       borderRadius: BorderRadius.circular(5.0),
     );
+  }
+
+  String pincode="000000";
+  User currentUser;
+  getInfoUser(){
+    userAPIServices.fetchUsers().then((response){
+      Iterable list = json.decode(response.body);
+      List<User> userList = List<User>();
+      userList = list.map((model) => User.fromObject(model)).toList();
+      currentUser = userList[0];
+
+      setState(() {
+        pincode = currentUser.pincode;
+      });
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getInfoUser();
   }
 
   @override
@@ -50,7 +75,7 @@ class _ChangePinState extends State<ChangePin>{
                     left: 20,
                     right: 20,
                     child: Center(
-                      child: Text("Nhập mã pin hiện tại", style: TextStyle(color: Colors.blue, fontSize: 18, fontWeight: FontWeight.w700),
+                      child: Text(pincode, style: TextStyle(color: Colors.blue, fontSize: 18, fontWeight: FontWeight.w700),
                       ),
                     )
                 ),
@@ -67,7 +92,7 @@ class _ChangePinState extends State<ChangePin>{
                         padding: const EdgeInsets.all(5.0),
                         child: PinPut(
                           fieldsCount: 6,
-                          onSubmit: (String pin) => _compare("686868" ,pin, context),
+                          onSubmit: (String pin) => _compare(pincode ,pin, context),
                           focusNode: _pinPutFocusNode,
                           controller: _pinPutController,
                           submittedFieldDecoration: _pinPutDecoration.copyWith(

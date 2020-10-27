@@ -16,22 +16,24 @@ class Tesst extends StatefulWidget {
 
 class TesstState extends State<Tesst> {
 
-  String cover_image = "image.png";
-  String avatar_image = "image.png";
-  String nickname = "Error";
-  String intro = "Error";
+  String cover_image = "assets/loading.png";
+  String avatar_image = "assets/loading.png";
+  String nickname = "Loading";
+  String intro = "Loading";
 
+  int num = 0;
   User currentUser;
   getInfoUser(){
     userAPIServices.fetchUsers().then((response){
       Iterable list = json.decode(response.body);
       List<User> userList = List<User>();
       userList = list.map((model) => User.fromObject(model)).toList();
+      currentUser = userList[0];
+      num = userList.length;
 
       setState(() {
-        currentUser = userList[0];
         cover_image = currentUser.background_image;
-        avatar_image = currentUser.avatar;
+        avatar_image = currentUser.avatar_image;
         nickname = currentUser.nickname;
         intro = currentUser.intro;
       });
@@ -46,7 +48,6 @@ class TesstState extends State<Tesst> {
 
   @override
   Widget build(BuildContext context) {
-    getInfoUser();
     return Scaffold(
         drawer: AppDrawer(),
         body: SingleChildScrollView(
@@ -122,7 +123,7 @@ class TesstState extends State<Tesst> {
                       SizedBox(height: 15,),
                       Text(intro, style: TextStyle(fontSize: 16),),
                       SizedBox(height: 15,),
-                      _createDrawerItem(icon: AssetImage("assets/user.png"), text: 'Hồ sơ cá nhân',
+                      _createDrawerItem(icon: AssetImage("assets/user.png"), text: num.toString(),
                           onTap: () => Navigator.pushNamed(context, BaseRouter.PROFILE_USER)),
                       _createDrawerItem(icon: AssetImage("assets/change_pin.png"), text: 'Thay đổi mã PIN',
                           onTap: () => Navigator.pushNamed(context, BaseRouter.CHANGE_PIN)),

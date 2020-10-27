@@ -1,8 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:memorylife/models/User.dart';
 import 'package:memorylife/navigator/navigator.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 import 'dart:async';
+import 'package:memorylife/models/services/user.sevice.dart';
 
 class ChangePinRe extends StatefulWidget {
   final String pinn;
@@ -21,6 +25,22 @@ class _ChangePinReState extends State<ChangePinRe>{
       border: Border.all(color: Colors.blue),
       borderRadius: BorderRadius.circular(5.0),
     );
+  }
+
+  User currentUser;
+  getInfoUser(){
+    userAPIServices.fetchUsers().then((response){
+      Iterable list = json.decode(response.body);
+      List<User> userList = List<User>();
+      userList = list.map((model) => User.fromObject(model)).toList();
+      currentUser = userList[0];
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getInfoUser();
   }
 
   @override
@@ -50,7 +70,7 @@ class _ChangePinReState extends State<ChangePinRe>{
                     left: 20,
                     right: 20,
                     child: Center(
-                      child: Text("Nhập lại mật khẩu", style: TextStyle(color: Colors.blue, fontSize: 18, fontWeight: FontWeight.w700),
+                      child: Text("Nhập lại mã pin", style: TextStyle(color: Colors.blue, fontSize: 18, fontWeight: FontWeight.w700),
                       ),
                     )
                 ),
@@ -92,48 +112,63 @@ class _ChangePinReState extends State<ChangePinRe>{
     );
   }
 
+  void saveInfoUser() async {
+    var saveRes = await userAPIServices.postUser(currentUser);
+    saveRes == true ?
+    _showDialog("assets/done.png","Thay đổi mã pin thành công") : _showDialog("assets/error.png","Lỗi kết nối. Vui lòng thử lại");
+  }
+
+  void _showDialog(String image, String message) {
+    showGeneralDialog(
+        context: context,
+        barrierDismissible: true,
+        barrierLabel: MaterialLocalizations.of(context)
+            .modalBarrierDismissLabel,
+        barrierColor: Colors.black45,
+        transitionDuration: const Duration(milliseconds: 200),
+        pageBuilder: (BuildContext buildContext,
+            Animation animation,
+            Animation secondaryAnimation) {
+          return Center(
+            child: Container(
+                width: MediaQuery.of(context).size.width - 10,
+                height: MediaQuery.of(context).size.height -  80,
+                padding: EdgeInsets.all(20),
+
+                alignment: Alignment.center,
+
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset(image),
+                    Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Text(message, style: TextStyle(fontSize: 15, color: Colors.green),),
+                    ),
+                    RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      textColor: Colors.white,
+                      color: Colors.blue,
+                      onPressed: () {
+                        AppNavigator.navigateNavigation();
+                      },
+                      child: Text('Xác nhận', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
+                    ),
+                  ],
+                )
+            ),
+          );
+
+        });
+  }
+
   Future<void> _compare(String s1, String s2, BuildContext context) async {
     if (s1.compareTo(s2) == 0) {
-      return showGeneralDialog(
-          context: context,
-          barrierDismissible: true,
-          barrierLabel: MaterialLocalizations.of(context)
-              .modalBarrierDismissLabel,
-          barrierColor: Colors.black45,
-          transitionDuration: const Duration(milliseconds: 200),
-          pageBuilder: (BuildContext buildContext,
-              Animation animation,
-              Animation secondaryAnimation) {
-            return Center(
-              child: Container(
-                  width: MediaQuery.of(context).size.width - 10,
-                  height: MediaQuery.of(context).size.height -  80,
-                  padding: EdgeInsets.all(20),
-
-                  alignment: Alignment.center,
-
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Image.asset("assets/done.png"),
-                      RaisedButton(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        textColor: Colors.white,
-                        color: Colors.blue,
-                        onPressed: () {
-                          AppNavigator.navigateNavigation();
-                        },
-                        child: Text('Xác nhận', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
-                      ),
-                    ],
-                  )
-              ),
-            );
-
-          });
+      currentUser.pincode = s2;
+      saveInfoUser();
     }
     else{
       return showGeneralDialog(
@@ -159,6 +194,7 @@ class _ChangePinReState extends State<ChangePinRe>{
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Image.asset("assets/error.png"),
+                      Text("Mã pin bạn vừa nhập chưa khớp! Vui lòng nhập lại", style: TextStyle(fontSize: 15),),
                       RaisedButton(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0),
@@ -181,4 +217,10 @@ class _ChangePinReState extends State<ChangePinRe>{
     }
   }
 
+
+  void goHome() async {
+    Future.delayed(Duration(seconds: 3), () {
+      AppNavigator.navigateNavigation();
+    });
+  }
 }

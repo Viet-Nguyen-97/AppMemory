@@ -1,9 +1,15 @@
+import 'dart:convert';
+import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:memorylife/models/User.dart';
 import 'package:memorylife/ui/drawer/app_drawer.dart';
+import 'package:date_format/date_format.dart';
 
 import 'package:memorylife/router.dart';
+import 'package:memorylife/ui/menu/account.dart';
 import 'package:memorylife/ui/view_image.dart';
+import 'package:memorylife/models/services/user.sevice.dart';
 
 class ProfileUser extends StatefulWidget {
   const ProfileUser({Key key}) : super(key: key);
@@ -14,20 +20,56 @@ class ProfileUser extends StatefulWidget {
 
 class ProfileUserState extends State<ProfileUser> {
 
-  String cover_image = "assets/cover_image.png";
-  String avatar_image = "assets/image1.png";
-  String nickname = "Nguyễn Linh An";
-  String intro = "Don't let your dreams just be dreams";
+  String cover_image = "assets/loading.png";
+  String avatar_image = "assets/loading.png";
+  String nickname = "Loading";
+  String intro = "Loading";
 
-  String fullname = "Nguyễn Linh An";
-  String birthday = "20/09/1998";
-  String email = "linhan98@gmail.com";
-  String sex = "Nữ";
+  String phonenumber = "Loading";
+  DateTime birthday = new DateTime.now();
+  String email = "Loading";
+  String gender = "Loading";
 
-  final fullnameController = TextEditingController();
+  final nicknameController = TextEditingController();
+  final introController = TextEditingController();
+  final phonenumberController = TextEditingController();
   final birthdayController = TextEditingController();
   final emailController = TextEditingController();
-  final sexController = TextEditingController();
+  final genderController = TextEditingController();
+
+  User currentUser;
+  getInfoUser(){
+    userAPIServices.fetchUsers().then((response){
+      Iterable list = json.decode(response.body);
+      List<User> userList = List<User>();
+      userList = list.map((model) => User.fromObject(model)).toList();
+      currentUser = userList[0];
+
+      setState(() {
+        cover_image = currentUser.background_image;
+        avatar_image = currentUser.avatar_image;
+        nickname = currentUser.nickname;
+        intro = currentUser.intro;
+        phonenumber = currentUser.phonenumber;
+        birthday = DateTime.parse(currentUser.dob);
+        email = currentUser.email;
+        gender = currentUser.gender;
+
+        nicknameController.value = TextEditingValue(text: nickname);
+        introController.value = TextEditingValue(text: intro);
+        phonenumberController.value = TextEditingValue(text: phonenumber);
+        birthdayController.value = TextEditingValue(text: formatDate(birthday, [yyyy, '-', mm, '-', dd]));
+        emailController.value = TextEditingValue(text: email);
+        genderController.value = TextEditingValue(text: gender);
+      });
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getInfoUser();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -103,10 +145,6 @@ class ProfileUserState extends State<ProfileUser> {
                   width: MediaQuery.of(context).size.width,
                   child: Column(
                     children: [
-                      Text(nickname, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                      SizedBox(height: 15,),
-                      Text(intro, style: TextStyle(fontSize: 16),),
-                      SizedBox(height: 15,),
                       Container(
                         padding: EdgeInsets.only(left: 20,right: 20, top: 10, bottom: 10),
                         child: TextField(
@@ -120,14 +158,63 @@ class ProfileUserState extends State<ProfileUser> {
                               color: Colors.blue,
                             ),
                             prefixText: ' ',
-                            labelText: "Họ và tên",
+                            labelText: "Tên hiển thị",
                             alignLabelWithHint: true,
                           ),
                           style: TextStyle(
                               fontSize: 16.0,
                               color: Colors.black
                           ),
-                          controller: fullnameController,
+                          controller: nicknameController,
+                          onChanged:(value) => updateNickname(),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 20,right: 20, top: 10, bottom: 10),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderSide: new BorderSide(color: Colors.blue),
+                              borderRadius: BorderRadius.all(Radius.circular(20)),
+                            ),
+                            prefixIcon: new Icon(
+                              Icons.info_outline,
+                              color: Colors.blue,
+                            ),
+                            prefixText: ' ',
+                            labelText: "Giới thiệu",
+                            alignLabelWithHint: true,
+                          ),
+                          style: TextStyle(
+                              fontSize: 16.0,
+                              color: Colors.black
+                          ),
+                          controller: introController,
+                          onChanged:(value) => updateIntro(),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 20,right: 20, top: 10, bottom: 10),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderSide: new BorderSide(color: Colors.blue),
+                              borderRadius: BorderRadius.all(Radius.circular(20)),
+                            ),
+                            prefixIcon: new Icon(
+                              Icons.phone,
+                              color: Colors.blue,
+                            ),
+                            prefixText: ' ',
+                            labelText: "Số điện thoại",
+                            alignLabelWithHint: true,
+                          ),
+                          style: TextStyle(
+                              fontSize: 16.0,
+                              color: Colors.black
+                          ),
+                          controller: phonenumberController,
+                          onChanged:(value) => updatePhoneNumber(),
                         ),
                       ),
                       Container(
@@ -151,6 +238,7 @@ class ProfileUserState extends State<ProfileUser> {
                               color: Colors.black
                           ),
                           controller: birthdayController,
+                          onChanged:(value) => updateDob(),
                         ),
                       ),
                       Container(
@@ -196,7 +284,8 @@ class ProfileUserState extends State<ProfileUser> {
                               fontSize: 16.0,
                               color: Colors.black
                           ),
-                          controller: sexController,
+                          controller: genderController,
+                          onChanged:(value) => updateGender(),
                         ),
                       ),
 
@@ -208,16 +297,8 @@ class ProfileUserState extends State<ProfileUser> {
                         textColor: Colors.white,
                         color: Colors.blue,
                         onPressed: () {
-                          return showDialog(
-                            context: context,
-                            builder: (context) {
-                              return AlertDialog(
-                                // Retrieve the text the that user has entered by using the
-                                // TextEditingController.
-                                content: Text(fullnameController.text + "/n" + birthdayController.text + "/n" + emailController.text + "/n" + sexController.text ),
-                              );
-                            },
-                          );
+                          saveInfoUser();
+
                         },
                         child: Text('Lưu lại', style: TextStyle(fontSize: 16, ),),
                       ),
@@ -231,5 +312,72 @@ class ProfileUserState extends State<ProfileUser> {
     );
   }
 
+  void saveInfoUser() async {
+    var saveRes = await userAPIServices.postUser(currentUser);
+    saveRes == true ?
+    _showDialog("assets/done.png") : _showDialog("assets/error.png");
+  }
 
+  void _showDialog(String image) {
+    showGeneralDialog(
+        context: context,
+        barrierDismissible: true,
+        barrierLabel: MaterialLocalizations.of(context)
+            .modalBarrierDismissLabel,
+        barrierColor: Colors.black45,
+        transitionDuration: const Duration(milliseconds: 200),
+        pageBuilder: (BuildContext buildContext,
+            Animation animation,
+            Animation secondaryAnimation) {
+          return Center(
+            child: Container(
+                width: MediaQuery.of(context).size.width - 10,
+                height: MediaQuery.of(context).size.height -  80,
+                padding: EdgeInsets.all(20),
+
+                alignment: Alignment.center,
+
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset(image),
+                    RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      textColor: Colors.white,
+                      color: Colors.blue,
+                      onPressed: () {
+                        Navigator.pop(context);
+                        Navigator.pop(context);
+                      },
+                      child: Text('Xác nhận', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),),
+                    ),
+                  ],
+                )
+            ),
+          );
+
+        });
+  }
+
+  void updatePhoneNumber(){
+    currentUser.phonenumber = phonenumberController.text;
+  }
+  void updateDob(){
+    currentUser.dob = birthdayController.text;
+  }
+  void updateEmail(){
+    currentUser.email = emailController.text;
+  }
+  void updateGender(){
+    currentUser.gender = genderController.text;
+  }
+  void updateNickname(){
+    currentUser.nickname = nicknameController.text;
+  }
+  void updateIntro(){
+    currentUser.intro = introController.text;
+  }
 }

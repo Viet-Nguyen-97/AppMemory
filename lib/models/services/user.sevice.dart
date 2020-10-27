@@ -5,15 +5,12 @@ import 'package:memorylife/models/User.dart';
 
 
 class userAPIServices {
-  static String userUrl = 'https://8dd424766343.ngrok.io/api/user/';
+  static String userUrl = 'https://b70c596d1858.ngrok.io/api/user/';
 
   static Future fetchUsers() async {
     return await http.get(userUrl);
   }
 
-  static Future fetchUser(int id) async {
-    return await http.get(userUrl+id.toString());
-  }
 
   static Map<String, String> header = {
     'Content-Type': 'application/json',
